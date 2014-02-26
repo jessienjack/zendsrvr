@@ -4,6 +4,8 @@
 
 // Jack Yu
 // Feburary 2014
+// Warning: Untested
+
 
 class Functions
 {	
@@ -75,7 +77,6 @@ class Functions
 			}	
 		}
 
-		
 		$log_file  = $logdir . 'log_' . $today . '.log';
 		error_log('['.$timestamp.'] INFO: '.$message.PHP_EOL, 3, $log_file);
 	}
@@ -88,7 +89,7 @@ class Functions
 		
 		if ($lib <> ' ')
 		{
-			/*Assume there is no space in the library name itself, we can look for \s{1,} to replace all spaces between libraries */
+			/*Assume there is no space in the library name itself, we can look for \s+ to replace all spaces between libraries */
 			$libs = preg_replace("/\s+/",',',$lib);
 			$liblist = preg_replace("/,$/","",$libs);
 		}
